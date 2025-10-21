@@ -1,23 +1,5 @@
-using SPTarkov.DI.Annotations;
-using SPTarkov.Common.Semver.Implementations;
-using SPTarkov.Server.Core;
-using SPTarkov.Server.Core.Utils.Json;
-using SPTarkov.Server.Core.DI;
-using SPTarkov.Server.Core.Helpers;
-using SPTarkov.Server.Core.Models.Common;
-using SPTarkov.Server.Core.Models.Eft.Common;
-using SPTarkov.Server.Core.Models.Eft.Common.Tables;
-using SPTarkov.Server.Core.Models.Logging;
-using SPTarkov.Server.Core.Models.Spt.Config;
-using SPTarkov.Server.Core.Models.Spt.Mod;
 using SPTarkov.Server.Core.Models.Utils;
-using SPTarkov.Server.Core.Servers;
 using SPTarkov.Server.Core.Services;
-using SPTarkov.Server.Core.Services.Mod;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Reflection;
 
 namespace tarkovhdrework
 {
@@ -36,13 +18,13 @@ namespace tarkovhdrework
                 // The transformer will make sure that each time the locales are requested, the ones changed or added below are included
                 lazyloadedValue.AddTransformer(lazyloadedLocaleData =>
                 {
-                    //lazyloadedLocaleData["Attention! This is a Beta version of Escape from Tarkov for testing purposes."] = "It's Porkin Time!";
+                    lazyloadedLocaleData["Attention! This is a Beta version of Escape from Tarkov for testing purposes."] = "It's Porkin Time!";
 
                     //Graphics Card
-                    //lazyloadedLocaleData["57347ca924597744596b4e71 Name"] = "RTX4090";
+                    lazyloadedLocaleData["57347ca924597744596b4e71 Name"] = "RTX4090";
 
 
-                    //lazyloadedLocaleData.Add("TestingLocales", "Testing Locales");
+                    lazyloadedLocaleData.Add("TestingLocales", "Testing Locales");
 
 
                     return lazyloadedLocaleData;

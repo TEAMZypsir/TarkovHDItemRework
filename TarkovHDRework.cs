@@ -1,27 +1,10 @@
 using SPTarkov.DI.Annotations;
-using SPTarkov.Common.Semver.Implementations;
-using SPTarkov.Server.Core;
-using SPTarkov.Server.Core.Controllers;
-using SPTarkov.Server.Core.Utils.Json;
 using SPTarkov.Server.Core.DI;
 using SPTarkov.Server.Core.Helpers;
-using SPTarkov.Server.Core.Models.Common;
-using SPTarkov.Server.Core.Models.Eft.Common;
-using SPTarkov.Server.Core.Models.Eft.Common.Tables;
-using SPTarkov.Server.Core.Models.Eft.Dialog;
-using SPTarkov.Server.Core.Models.Logging;
-using SPTarkov.Server.Core.Models.Spt.Config;
 using SPTarkov.Server.Core.Models.Spt.Mod;
 using SPTarkov.Server.Core.Models.Utils;
-using SPTarkov.Server.Core.Servers;
 using SPTarkov.Server.Core.Services;
-using SPTarkov.Server.Core.Services.Mod;
-using SPTarkov.Server.Core.Utils;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Reflection;
-using System.IO;
 
 namespace tarkovhdrework
 {
@@ -39,7 +22,7 @@ namespace tarkovhdrework
         public override Dictionary<string, SemanticVersioning.Range>? ModDependencies { get; init; }
         public override string? Url { get; init; }
         public override bool? IsBundleMod { get; init; } = true;
-        public override string? License { get; init; } = "CC BY-NC-ND 4.0"; 
+        public override string? License { get; init; } = "CC BY-NC-ND 4.0";
 
     }
 
@@ -64,8 +47,8 @@ namespace tarkovhdrework
             logger.Success($"Mod loaded after database!");
 
             // Create an instance of NewLocales and call EditLocales
-            var newLocales = new NewLocales(logger, databaseService, localeService, serverLocalisationService);
-            newLocales.EditLocales();
+            //var newLocales = new NewLocales(logger, databaseService, localeService, serverLocalisationService);
+            //newLocales.EditLocales();
 
 
             var items = databaseService.GetItems();
