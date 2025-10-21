@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>TarkovHDRework</AssemblyName>
+    <Description>HD Rework for Tarkov Barter Items</Description>
+    <Version>0.4.4</Version>
+    <Authors>PulledP0rk</Authors>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin\SPT\user\mods\TarkovHDRework\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SPTarkov.Common" Version="4.0.1" />
+    <PackageReference Include="SPTarkov.DI" Version="4.0.1" />
+    <PackageReference Include="SPTarkov.Server.Core" Version="4.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+      <Content Include="bundles\**">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+  <ItemGroup>
+	  <Content Update="bundles.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+</Project>
